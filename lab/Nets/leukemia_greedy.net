@@ -107,55 +107,39 @@ node AML
 potential (NAP1L1 | AML)
 {
     data
-     = (( 0.708333 0.291667 )	%  AML=no
-	( 0.97619 0.0238095 ));	%  AML=yes
-    experience
-     = ( 36	%  AML=no
-	 21 );	%  AML=yes
+     = (( 0.5 0.5 )	%  AML=no
+	( 0.5 0.5 ));	%  AML=yes
 }
 
 potential (ATP2B4 | AML)
 {
     data
-     = (( 0.736111 0.263889 )	%  AML=no
-	( 0.97619 0.0238095 ));	%  AML=yes
-    experience
-     = ( 36	%  AML=no
-	 21 );	%  AML=yes
+     = (( 0.5 0.5 )	%  AML=no
+	( 0.5 0.5 ));	%  AML=yes
 }
 
 potential (PCCB)
 {
-    data = ( 0.794643 0.205357 );
-    experience = 56;
+    data = ( 0.5 0.5 );
 }
 
 potential (MDK | PCCB)
 {
     data
-     = (( 0.833333 0.166667 )	%  PCCB=yes
-	( 0.458333 0.541667 ));	%  PCCB=no
-    experience
-     = ( 45	%  PCCB=yes
-	 12 );	%  PCCB=no
+     = (( 0.5 0.5 )	%  PCCB=yes
+	( 0.5 0.5 ));	%  PCCB=no
 }
 
 potential (MDS1 | AML)
 {
     data
-     = (( 0.736111 0.263889 )	%  AML=no
-	( 0.97619 0.0238095 ));	%  AML=yes
-    experience
-     = ( 36	%  AML=no
-	 21 );	%  AML=yes
+     = (( 0.5 0.5 )	%  AML=no
+	( 0.5 0.5 ));	%  AML=yes
 }
 
 potential (AML | MDK)
 {
     data
-     = (( 0.523256 0.476744 )	%  MDK=no
-	( 0.964286 0.0357143 ));	%  MDK=yes
-    experience
-     = ( 43	%  MDK=no
-	 14 );	%  MDK=yes
+     = (( 0.5 0.5 )	%  MDK=no
+	( 0.5 0.5 ));	%  MDK=yes
 }
