@@ -1,14 +1,51 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
-\title{ml-assignment1}
-\author{ste.branchi }
-\date{December 2019}
+\title{Report Machine Learning Second Assignment}
+\author{Stefano Branchi [207523] \\ stefano.branchi@studenti.unitn.it \\\\ University of Trento}
+\date{}
 
 \begin{document}
 
 \maketitle
+\begin{abstract}
+    The report for the first assignment of Machine Learning. The aim of this assignment is to use Bayesian Networks for the classification of leukemia cases. It has been used Hugin Lite.
+\end{abstract}
 
-\section{Introduction}
+\section{Dataset}
+The dataset is a list of comma separated values that can be positive ('yes') or negative ('no'). Each values is referred to a particular gene affected in the study of leukemia cases. \\
+In first place I randomly shuffled the dataset and the I splitted it in 80\% training set and 20\% testing set. 
+
+\section{Algorithms}
+In this section the three methods used to create the Bayesian Networks are exploited.
+
+\subsection{NPC}
+NPC (Necessary Path Condition) algorithm works testing for each pair of random variables their conditional independence. An indirected edge is added between each pair of non statistically independent variables, then conflicts, like cycles, are solved with some heuristic or user input.\\
+The algorithm is performed with standard parameters.
+
+\subsection{Greedy Search-And-Score}
+The greedy search-and-score algorithm for learning the structure of a Bayesian network uses a score function to evaluate the goodness of a candidate network structure. The algorithm performs a search through the space of possible network structures and returns the structure with the highest score. The operators used to perform the search given a current candidate are add an arc, remove an arc and reverse an arc.\\
+The algorithm is performed with standard parameters.
+
+\subsection{Fixed Naive Bayes Structure}
+Fixed Naive Bayes networks assume a simplified structure for the dependencies between variables. The structure of my network consists in the gene we want to predict (AML) as the root of the network and all other genes as leaves.\\
+The algorithm is performed with standard parameters.
+
+\section{Final Results}
+Results of the three networks are shown in the next table:
+\begin{center}
+\begin{tabular}{c|ccc}
+            & Precision & Recall & Accuracy \\ \hline
+NPC         & 0.43      & 0.60   & 0.63     \\
+Greedy      & 0.50      & 0.80   & 0.69     \\
+Naive Bayse & 0.57      & 0.80   & 0.75    
+\end{tabular}
+\end{center}
+
+A common result of all the three networs is that the Recall is significantly higher than the Precision. This mean that networks favors to classify negative examples as positive, but they have an high percentage of positive examples classified as positive.
+For the Accuracy factor the Naive Bayes network works better. The cause of this result can be that the dataset was too small to let Greedy and NPC networks learn a strong structure, maybe also for presence of noise in the dataset, making them not capable to generalize properly.
+
+
 
 \end{document}
